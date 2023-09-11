@@ -1,6 +1,8 @@
 from app import db
+from flask_login import UserMixin
+from sqlalchemy import Boolean
 
-class Usuario(db.Model):
+class Usuario(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(255))
     apellido = db.Column(db.String(255))
@@ -12,6 +14,10 @@ class Usuario(db.Model):
     cuentas_ahorro = db.relationship('CuentaAhorro', backref='usuario', lazy='dynamic')
     prestamos = db.relationship('Prestamo', backref='usuario', lazy='dynamic')
     sesiones = db.relationship('RegistroSesion', backref='usuario', lazy='dynamic')
+    activo = db.Column(Boolean, default=True)
+
+    def is_active(self):
+        return self.activo
 
 class RegistroSesion(db.Model):
     id = db.Column(db.Integer, primary_key=True)

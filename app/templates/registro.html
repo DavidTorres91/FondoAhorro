@@ -1,44 +1,55 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-lg-6 offset-lg-3">
-                <h2>Registro de Usuario</h2>
-                <form method="POST">
-                    <!-- Campos del formulario -->
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" class="form-control" id="apellido" name="apellido" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="correo_electronico">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contrasena">Contraseña</label>
-                        <input type="password" class="form-control" id="contrasena" name="contrasena" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="numero_telefono">Número de Teléfono</label>
-                        <input type="text" class="form-control" id="numero_telefono" name="numero_telefono" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="direccion">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" required>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Registrar</button>
-                </form>
-            </div>
+<div class="container mt-5 mb-5 pb-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="mb-4">Registro</h2>
+            <form method="POST" action="{{ url_for('registro') }}">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.nombre.label(class="form-control-label") }}
+                    {{ form.nombre(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.apellido.label(class="form-control-label") }}
+                    {{ form.apellido(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.correo_electronico.label(class="form-control-label") }}
+                    {{ form.correo_electronico(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.contrasena.label(class="form-control-label") }}
+                    {{ form.contrasena(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.confirmar_contrasena.label(class="form-control-label") }}
+                    {{ form.confirmar_contrasena(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.fecha_nacimiento.label(class="form-control-label") }}
+                    {{ form.fecha_nacimiento(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.numero_telefono.label(class="form-control-label") }}
+                    {{ form.numero_telefono(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.direccion.label(class="form-control-label") }}
+                    {{ form.direccion(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.genero.label(class="form-control-label") }}
+                    {{ form.genero(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.ocupacion.label(class="form-control-label") }}
+                    {{ form.ocupacion(class="form-control") }}
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+            </form>
         </div>
     </div>
+</div>
 {% endblock %}
