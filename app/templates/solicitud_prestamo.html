@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Solicitud de Préstamo</h2>
+                <!-- Contenido de la solicitud de préstamo -->
+                <form method="POST">
+                    <!-- Agrega los campos del formulario de solicitud de préstamo aquí -->
+                    <div class="form-group">
+                        <label for="monto">Monto del préstamo:</label>
+                        <input type="number" class="form-control" id="monto" name="monto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="plazo">Plazo del préstamo (meses):</label>
+                        <input type="number" class="form-control" id="plazo" name="plazo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="razon">Razón de la solicitud:</label>
+                        <textarea class="form-control" id="razon" name="razon" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                </form>
+                <!-- Fin del formulario de solicitud de préstamo -->
+            </div>
+        </div>
+    </div>
+{% endblock %}

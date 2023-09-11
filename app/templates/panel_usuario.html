@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Panel de Usuario</h2>
+                <!-- Contenido del panel de usuario -->
+                <p>Bienvenido, {{ current_user.username }}.</p>
+                <p>Aquí puedes ver y gestionar tu información personal, solicitar préstamos, y más.</p>
+                <!-- Agrega más contenido según las necesidades de tu panel de usuario -->
+            </div>
+        </div>
+    </div>
+{% endblock %}

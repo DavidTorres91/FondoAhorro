@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>Iniciar Sesión</h2>
+                <form method="POST" action="{{ url_for('login') }}">
+                    {{ form.hidden_tag() }}
+                    <!-- Aquí van los campos del formulario -->
+                    <div class="form-group">
+                        {{ form.email.label(class="form-control-label") }}
+                        {{ form.email(class="form-control", required=true) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label(class="form-control-label") }}
+                        {{ form.password(class="form-control", required=true) }}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Historial de Transacciones</h2>
+                <!-- Tabla para mostrar el historial de transacciones -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Descripción</th>
+                            <th>Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for transaccion in transacciones %}
+                            <tr>
+                                <td>{{ transaccion.fecha }}</td>
+                                <td>{{ transaccion.descripcion }}</td>
+                                <td>${{ transaccion.monto }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <!-- Fin de la tabla de historial de transacciones -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
